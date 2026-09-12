@@ -96,30 +96,33 @@
 
                 <div class="globe-stage" aria-hidden="true">
                     <div class="globe-glow"></div>
-                    <div class="globe-core"></div>
-                    <svg class="globe-svg" viewBox="0 0 400 400">
-                        <defs>
-                            <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#7bf1fb"></stop>
-                                <stop offset="100%" stop-color="#2f6bff"></stop>
-                            </linearGradient>
-                        </defs>
-                        <g class="globe-ring-outer">
-                            <ellipse class="lat strong" cx="200" cy="200" rx="150" ry="150"></ellipse>
-                            <ellipse class="lat" cx="200" cy="200" rx="150" ry="60"></ellipse>
-                            <ellipse class="lat" cx="200" cy="200" rx="150" ry="105"></ellipse>
-                            <path class="arc" d="M50 220 Q200 60 350 190"></path>
-                            <circle class="node" cx="50" cy="220" r="4"></circle>
-                            <circle class="node" cx="350" cy="190" r="4"></circle>
-                        </g>
-                        <g class="globe-ring-inner">
-                            <ellipse class="lat" cx="200" cy="200" rx="105" ry="150"></ellipse>
-                            <ellipse class="lat" cx="200" cy="200" rx="60" ry="150"></ellipse>
-                            <path class="arc" d="M120 340 Q260 240 300 90"></path>
-                            <circle class="node" cx="120" cy="340" r="4"></circle>
-                            <circle class="node" cx="300" cy="90" r="4"></circle>
-                        </g>
-                    </svg>
+                    <div id="earth-3d-mount" class="earth-3d-mount">
+                        <!-- Fallback (kept unless the WebGL globe mounts successfully) -->
+                        <div class="globe-core"></div>
+                        <svg class="globe-svg" viewBox="0 0 400 400">
+                            <defs>
+                                <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#7bf1fb"></stop>
+                                    <stop offset="100%" stop-color="#2f6bff"></stop>
+                                </linearGradient>
+                            </defs>
+                            <g class="globe-ring-outer">
+                                <ellipse class="lat strong" cx="200" cy="200" rx="150" ry="150"></ellipse>
+                                <ellipse class="lat" cx="200" cy="200" rx="150" ry="60"></ellipse>
+                                <ellipse class="lat" cx="200" cy="200" rx="150" ry="105"></ellipse>
+                                <path class="arc" d="M50 220 Q200 60 350 190"></path>
+                                <circle class="node" cx="50" cy="220" r="4"></circle>
+                                <circle class="node" cx="350" cy="190" r="4"></circle>
+                            </g>
+                            <g class="globe-ring-inner">
+                                <ellipse class="lat" cx="200" cy="200" rx="105" ry="150"></ellipse>
+                                <ellipse class="lat" cx="200" cy="200" rx="60" ry="150"></ellipse>
+                                <path class="arc" d="M120 340 Q260 240 300 90"></path>
+                                <circle class="node" cx="120" cy="340" r="4"></circle>
+                                <circle class="node" cx="300" cy="90" r="4"></circle>
+                            </g>
+                        </svg>
+                    </div>
                     <div class="data-chip chip-1"><span class="dot"></span>Live Sync Active</div>
                     <div class="data-chip chip-2"><span class="dot"></span>99.9% Uptime</div>
                 </div>
@@ -239,5 +242,6 @@
     </nav>
 
     <script src="site.js"></script>
+    <script src="earth-globe.js"></script>
 </body>
 </html>
