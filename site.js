@@ -1,4 +1,23 @@
-// SCOOP INNOVATIONS - shared site behaviour (nav drawer, reveal, contact form)
+// SCOOP INNOVATIONS - shared site behaviour (theme, nav drawer, reveal, contact form)
+
+function applyTheme(theme) {
+    if (theme === "light") {
+        document.documentElement.setAttribute("data-theme", "light");
+    } else {
+        document.documentElement.removeAttribute("data-theme");
+    }
+    try { localStorage.setItem("scoop_theme", theme); } catch (e) {}
+
+    document.querySelectorAll(".theme-toggle-row .toggle-label").forEach((el) => {
+        el.textContent = theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode";
+    });
+}
+window.applyTheme = applyTheme;
+
+window.toggleSiteTheme = function () {
+    const current = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+    applyTheme(current === "light" ? "dark" : "light");
+};
 
 function toggleDrawer(open) {
     const drawer = document.getElementById("mobile-drawer");
@@ -53,4 +72,5 @@ function setupContactForm() {
 document.addEventListener("DOMContentLoaded", () => {
     setupScrollReveal();
     setupContactForm();
+    applyTheme(document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark");
 });

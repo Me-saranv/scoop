@@ -113,10 +113,10 @@
         mount.appendChild(renderer.domElement);
 
         // ---- Lighting: bright key light from the upper-right, soft ambient fill ----
-        var ambient = new THREE.AmbientLight(0x2a4a80, 1.3);
+        var ambient = new THREE.AmbientLight(0x1c2f52, 0.75);
         scene.add(ambient);
 
-        var keyLight = new THREE.DirectionalLight(0xcfeeff, 0.95);
+        var keyLight = new THREE.DirectionalLight(0xcfeeff, 1.75);
         keyLight.position.set(4.2, 3.4, 4.6);
         scene.add(keyLight);
 
@@ -140,10 +140,11 @@
             map: earthTex,
             bumpMap: bumpTex,
             bumpScale: 0.03,
-            specular: new THREE.Color(0x1c3050),
-            shininess: 7,
-            emissive: new THREE.Color(0x050e22),
-            emissiveIntensity: 0.65
+            specular: new THREE.Color(0x2a4a78),
+            shininess: 10,
+            emissiveMap: earthTex,
+            emissive: new THREE.Color(0xffffff),
+            emissiveIntensity: 0.45
         });
         var earthMesh = new THREE.Mesh(earthGeo, earthMat);
         earthGroup.add(earthMesh);
@@ -153,7 +154,7 @@
             glowColor: { value: new THREE.Color(0x7bf1fb) }
         };
         var atmosphere = new THREE.Mesh(
-            new THREE.SphereGeometry(radius * 1.045, 64, 64),
+            new THREE.SphereGeometry(radius * 1.09, 64, 64),
             new THREE.ShaderMaterial({
                 uniforms: atmoUniforms,
                 vertexShader: [
@@ -172,8 +173,8 @@
                     'varying vec3 vPosW;',
                     'void main() {',
                     '  vec3 viewDir = normalize(cameraPosition - vPosW);',
-                    '  float intensity = pow(0.72 - dot(vNormal, viewDir), 3.0);',
-                    '  gl_FragColor = vec4(glowColor, clamp(intensity, 0.0, 1.0));',
+                    '  float intensity = pow(0.62 - dot(vNormal, viewDir), 2.1);',
+                    '  gl_FragColor = vec4(glowColor, clamp(intensity, 0.0, 1.0) * 0.5);',
                     '}'
                 ].join('\n'),
                 side: THREE.BackSide,
@@ -183,38 +184,6 @@
             })
         );
         earthGroup.add(atmosphere);
-
-        var outerHalo = new THREE.Mesh(
-            new THREE.SphereGeometry(radius * 1.16, 48, 48),
-            new THREE.ShaderMaterial({
-                uniforms: { glowColor: { value: new THREE.Color(0x2f6bff) } },
-                vertexShader: [
-                    'varying vec3 vNormal;',
-                    'varying vec3 vPosW;',
-                    'void main() {',
-                    '  vNormal = normalize(normalMatrix * normal);',
-                    '  vec4 wp = modelMatrix * vec4(position, 1.0);',
-                    '  vPosW = wp.xyz;',
-                    '  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);',
-                    '}'
-                ].join('\n'),
-                fragmentShader: [
-                    'uniform vec3 glowColor;',
-                    'varying vec3 vNormal;',
-                    'varying vec3 vPosW;',
-                    'void main() {',
-                    '  vec3 viewDir = normalize(cameraPosition - vPosW);',
-                    '  float intensity = pow(0.86 - dot(vNormal, viewDir), 4.0);',
-                    '  gl_FragColor = vec4(glowColor, clamp(intensity, 0.0, 1.0) * 0.6);',
-                    '}'
-                ].join('\n'),
-                side: THREE.BackSide,
-                blending: THREE.AdditiveBlending,
-                transparent: true,
-                depthWrite: false
-            })
-        );
-        earthGroup.add(outerHalo);
 
         // ---- City nodes ----
         var cityVecs = CITIES.map(function (c) { return latLonToVec3(THREE, c.lat, c.lon, radius * 1.004); });
