@@ -16,19 +16,13 @@ A state-of-the-art **3D Animated Enterprise Website** built for your comprehensi
 - 🔬 **Laboratory (LIMS)**: Sample collection, testing, reports & billing.
 - ⚖️ **Legal Practice Management**: Cases, clients, documents, hearings, billing & tasks.
 
-### 2. Interactive 3D WebGL Ecosystem (Three.js)
-- **Central Core Lattice**: Cybernetic icosahedron with orbital data rings.
-- **10 Orbiting Industry Nodes**: Real-time 3D spatial nodes with hover tooltips and raycasted camera focus.
-- **Dynamic Particle Constellation**: 1,100+ ambient star particles reacting to mouse parallax.
-- **Bi-directional Linking**: Clicking a 3D node scrolls directly to that solution's card.
-
-### 3. Phased Strategic Roadmap
+### 2. Phased Strategic Roadmap
 - **Phase 1**: Unified Core & Multi-Tenant Engine (Multi-company, Multi-currency, Tax & E-Invoicing).
 - **Phase 2**: Connected Omnichannel & IoT Telematics (WhatsApp Business, GPS Fleet tracking, Biometrics, POS & Barcodes).
 - **Phase 3**: AI Copilot & Cognitive Workflows (AI Chatbot, Autonomous Analytics, Predictive MRP & Forecasting).
 - **Phase 4**: Sovereign Cloud & Air-Gapped Deployments (Hybrid Cloud, On-Premise Kubernetes, Open APIs).
 
-### 4. Advanced Enterprise Capabilities Matrix
+### 3. Advanced Enterprise Capabilities Matrix
 - 🤖 AI Chatbot / AI Copilot
 - 💬 WhatsApp Business Integration
 - 💳 Payment Gateway & Unified POS
@@ -42,7 +36,7 @@ A state-of-the-art **3D Animated Enterprise Website** built for your comprehensi
 - 🌐 Multi-Language & Multi-Currency
 - ☁️ Sovereign Cloud & On-Premise Air-Gapped Deployment
 
-### 5. Interactive Solution Configurator & Demo Scheduler
+### 4. Interactive Solution Configurator & Demo Scheduler
 - Prospective clients can choose their industry, toggle desired add-ons, view estimated deployment timelines, and request a tailored live architecture demonstration.
 
 ---

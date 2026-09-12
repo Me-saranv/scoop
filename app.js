@@ -1,4 +1,4 @@
-// SCOOP INNOVATIONS - APPLICATION LOGIC, 3D ECOSYSTEM CORE BRIDGE & KINETIC TRANSITIONS
+// SCOOP INNOVATIONS - APPLICATION LOGIC & KINETIC TRANSITIONS
 // "Transforming Ideas Into Digital Solutions"
 // Official Contact: info@scoopinnovations.in | https://scoopinnovations.in/
 
@@ -220,12 +220,10 @@ function applyTheme(theme) {
         if (icon) icon.textContent = "🌙";
         if (label) label.textContent = "Dark Theme";
         showToast("Switched to Radiant Light Theme");
-        if (window.update3DTheme) window.update3DTheme(true);
     } else {
         if (icon) icon.textContent = "☀️";
         if (label) label.textContent = "Radiant Theme";
         showToast("Switched to Cyber Dark Theme");
-        if (window.update3DTheme) window.update3DTheme(false);
     }
 }
 
@@ -283,9 +281,6 @@ function renderSolutionCards(data) {
                     <button type="button" class="link-btn" onclick="openSolutionDetails('${sol.id}')">
                         View Modules & Specs
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </button>
-                    <button type="button" class="node-focus-btn" onclick="trigger3DFocus('${sol.id}')" title="Locate in 3D Ecosystem Core">
-                        3D View
                     </button>
                 </div>
             </div>
@@ -361,25 +356,6 @@ function setupScrollReveal() {
         observer.observe(el);
     });
 }
-
-// 3D Focus bridge
-window.trigger3DFocus = function (id) {
-    const canvasSection = document.getElementById("hero-section");
-    if (canvasSection) {
-        canvasSection.scrollIntoView({ behavior: "smooth" });
-    }
-    showToast(`Focused ${id.toUpperCase()} on 3D Ecosystem Core`);
-};
-
-// Canvas click bridge
-window.highlightSolutionCard = function (id) {
-    const card = document.getElementById(`card-${id}`);
-    if (card) {
-        card.scrollIntoView({ behavior: "smooth", block: "center" });
-        card.classList.add("highlighted");
-        setTimeout(() => card.classList.remove("highlighted"), 1800);
-    }
-};
 
 // Solution Modal Details
 window.openSolutionDetails = function (id) {
