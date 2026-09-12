@@ -1,7 +1,7 @@
 // SCOOP INNOVATIONS - Home hero: realistic 3D digital Earth (WebGL / Three.js)
-// Real spherical geometry, NASA night-lights texture, Fresnel atmosphere glow,
-// upper-right directional key light, glowing city nodes, animated connection
-// arcs, an orbital energy trail, and a floating particle field.
+// Real spherical geometry, NASA night-lights texture, upper-right directional
+// key light, glowing city nodes, animated connection arcs, and a floating
+// particle field.
 // Falls back to the existing static SVG globe if WebGL/Three.js is unavailable.
 
 (function () {
@@ -77,13 +77,6 @@
         return new THREE.QuadraticBezierCurve3(p1.clone(), mid, p2.clone());
     }
 
-    function orbitPoint(THREE, radius, angle, tilt) {
-        var v = new THREE.Vector3(Math.cos(angle) * radius, 0, Math.sin(angle) * radius);
-        v.applyAxisAngle(new THREE.Vector3(1, 0, 0), tilt);
-        v.applyAxisAngle(new THREE.Vector3(0, 0, 1), 0.24);
-        return v;
-    }
-
     function buildEarth() {
         var THREE = window.THREE;
         var mount = document.getElementById('earth-3d-mount');
@@ -149,42 +142,6 @@
         var earthMesh = new THREE.Mesh(earthGeo, earthMat);
         earthGroup.add(earthMesh);
 
-        // ---- Fresnel atmosphere rim glow ----
-        var atmoUniforms = {
-            glowColor: { value: new THREE.Color(0x7bf1fb) }
-        };
-        var atmosphere = new THREE.Mesh(
-            new THREE.SphereGeometry(radius * 1.09, 64, 64),
-            new THREE.ShaderMaterial({
-                uniforms: atmoUniforms,
-                vertexShader: [
-                    'varying vec3 vNormal;',
-                    'varying vec3 vPosW;',
-                    'void main() {',
-                    '  vNormal = normalize(normalMatrix * normal);',
-                    '  vec4 wp = modelMatrix * vec4(position, 1.0);',
-                    '  vPosW = wp.xyz;',
-                    '  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);',
-                    '}'
-                ].join('\n'),
-                fragmentShader: [
-                    'uniform vec3 glowColor;',
-                    'varying vec3 vNormal;',
-                    'varying vec3 vPosW;',
-                    'void main() {',
-                    '  vec3 viewDir = normalize(cameraPosition - vPosW);',
-                    '  float intensity = pow(0.62 - dot(vNormal, viewDir), 2.1);',
-                    '  gl_FragColor = vec4(glowColor, clamp(intensity, 0.0, 1.0) * 0.5);',
-                    '}'
-                ].join('\n'),
-                side: THREE.BackSide,
-                blending: THREE.AdditiveBlending,
-                transparent: true,
-                depthWrite: false
-            })
-        );
-        earthGroup.add(atmosphere);
-
         // ---- City nodes ----
         var cityVecs = CITIES.map(function (c) { return latLonToVec3(THREE, c.lat, c.lon, radius * 1.004); });
         cityVecs.forEach(function (v) {
@@ -218,28 +175,6 @@
             earthGroup.add(pulse);
             arcPulses.push({ curve: curve, sprite: pulse, phase: idx / ARCS.length, speed: 0.09 + (idx % 3) * 0.02 });
         });
-
-        // ---- Circular orbital energy trail ----
-        var orbitRadius = radius * 1.5;
-        var orbitTilt = 0.36;
-        var orbitPts = [];
-        for (var oi = 0; oi <= 96; oi++) {
-            orbitPts.push(orbitPoint(THREE, orbitRadius, (oi / 96) * Math.PI * 2, orbitTilt));
-        }
-        var orbitLine = new THREE.Line(
-            new THREE.BufferGeometry().setFromPoints(orbitPts),
-            new THREE.LineBasicMaterial({ color: 0x2f6bff, transparent: true, opacity: 0.28, blending: THREE.AdditiveBlending })
-        );
-        earthGroup.add(orbitLine);
-
-        var trailCount = 10;
-        var trailSprites = [];
-        for (var ti = 0; ti < trailCount; ti++) {
-            var s = makeGlowSprite(THREE, ti === 0 ? '#ffffff' : '#7bf1fb', radius * (ti === 0 ? 0.16 : 0.11 - ti * 0.006));
-            s.material.opacity = 1 - (ti / trailCount);
-            earthGroup.add(s);
-            trailSprites.push(s);
-        }
 
         // ---- Floating particle field around the globe ----
         var particleCount = 260;
@@ -309,12 +244,6 @@
                 var tp = (t * a.speed + a.phase) % 1;
                 a.sprite.position.copy(a.curve.getPointAt(tp));
                 a.sprite.material.opacity = Math.sin(tp * Math.PI);
-            });
-
-            var orbitAngle = t * 0.26;
-            trailSprites.forEach(function (s, idx) {
-                var a = orbitAngle - idx * 0.09;
-                s.position.copy(orbitPoint(THREE, orbitRadius, a, orbitTilt));
             });
 
             particles.rotation.y += 0.0006;
