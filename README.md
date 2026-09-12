@@ -1,53 +1,31 @@
-﻿# Omnicore 3D - Enterprise Management Software Suite Website
+# Scoop Innovations — Technology for a Smarter Tomorrow
 
-A state-of-the-art **3D Animated Enterprise Website** built for your comprehensive management software solutions business.
+A premium, multi-page enterprise technology website for **Scoop Innovations**, built with plain HTML/CSS/JS (no frameworks). Dark navy / electric blue / cyan visual system with a floating white nav pill, glassmorphism cards, and a CSS/SVG hero globe.
 
-## 🚀 Features & Modules Included
+## 📄 Pages
 
-### 1. 10 Core Industry Verticals
-- 🏥 **Hospital Management**: Patients, appointments, OP/IP, doctors, pharmacy, lab, billing, insurance & medical records.
-- 🎓 **School & College Management**: Admissions, students, fees, attendance, exams, timetable, staff & parent portal.
-- 🏨 **Hotel & Restaurant Management**: Reservations, rooms, housekeeping, restaurant POS & billing.
-- 🛍️ **Retail Management & POS**: POS, products, inventory, customers, loyalty programs & offers.
-- ⚙️ **Manufacturing ERP**: Production planning, BOM, MRP, work orders, quality & maintenance.
-- 🧵 **Textile & Garment Management**: Orders, production, cutting, stitching, dyeing, finishing & dispatch.
-- 🚚 **Logistics & Fleet Transport**: Fleet, trips, drivers, GPS, freight, delivery & vehicle maintenance.
-- 💊 **Pharmacy Management**: Drug inventory, prescriptions, billing, expiry & batch tracking.
-- 🔬 **Laboratory (LIMS)**: Sample collection, testing, reports & billing.
-- ⚖️ **Legal Practice Management**: Cases, clients, documents, hearings, billing & tasks.
+| Page | File | Purpose |
+|---|---|---|
+| Home | `index.html` | Hero with animated globe visual, solution icon strip, CTA banner |
+| Solutions | `solutions.html` | Grid of 10 solution cards (ERP, CRM, HRMS, Sales, Dashboards, AI Assistant, Mobile Apps, Website Development, Custom Software, Cloud Solutions) |
+| Industries | `industries.html` | Grid of 10 industry cards with gradient/icon art |
+| Features | `features.html` | Split layout: feature list + live-style dashboard mockup |
+| About | `about.html` | Company story, office panel illustration, core values, quote banner |
+| Contact | `contact.html` | Contact info, socials, and a message form (opens the visitor's email client via `mailto:`) |
 
-### 2. Phased Strategic Roadmap
-- **Phase 1**: Unified Core & Multi-Tenant Engine (Multi-company, Multi-currency, Tax & E-Invoicing).
-- **Phase 2**: Connected Omnichannel & IoT Telematics (WhatsApp Business, GPS Fleet tracking, Biometrics, POS & Barcodes).
-- **Phase 3**: AI Copilot & Cognitive Workflows (AI Chatbot, Autonomous Analytics, Predictive MRP & Forecasting).
-- **Phase 4**: Sovereign Cloud & Air-Gapped Deployments (Hybrid Cloud, On-Premise Kubernetes, Open APIs).
-
-### 3. Advanced Enterprise Capabilities Matrix
-- 🤖 AI Chatbot / AI Copilot
-- 💬 WhatsApp Business Integration
-- 💳 Payment Gateway & Unified POS
-- 🏷️ Barcode & QR Code Engine
-- 👤 Biometric & Attendance Integration
-- 🛰️ GPS & Fleet Telematics
-- ⚡ Open REST & GraphQL APIs
-- 🔔 Omnichannel Notifications (SMS, Email, Push, WhatsApp)
-- 🧾 E-Invoicing & Tax Compliance (GST / IRN / E-Way Bill)
-- 🏢 Multi-Company & Multi-Branch Architecture
-- 🌐 Multi-Language & Multi-Currency
-- ☁️ Sovereign Cloud & On-Premise Air-Gapped Deployment
-
-### 4. Interactive Solution Configurator & Demo Scheduler
-- Prospective clients can choose their industry, toggle desired add-ons, view estimated deployment timelines, and request a tailored live architecture demonstration.
-
----
+Every page shares the same `styles.css` design system and `site.js` behaviour (mobile drawer, scroll reveal, contact form), with a consistent floating navbar, footer, and mobile bottom nav (Home / current section / Contact).
 
 ## 💻 How to Run Locally
 
-You can open `index.html` directly in any web browser, or run a local server:
+Open `index.html` directly in a browser, or serve it:
 
 ```powershell
-# In PowerShell:
 cd "C:\Users\saravanan_ricago\.gemini\antigravity\scratch\enterprise-3d-solutions"
 python -m http.server 8000
 ```
-Then visit `http://localhost:8000` in your web browser.
+
+Then visit `http://localhost:8000`.
+
+## 🚀 Deployment
+
+Hosted via GitHub Pages from the `main` branch at **https://me-saranv.github.io/scoop/**.

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industries | Scoop Innovations</title>
+    <meta name="description" content="Tailored Scoop Innovations software for Apparel, Manufacturing, Retail, Healthcare, Education, Hospitality, Logistics, Pharmacy and Legal.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .industry-card .art { display: flex; align-items: center; justify-content: center; }
+        .industry-card .art svg { width: 46%; height: 46%; opacity: 0.9; }
+    </style>
+</head>
+<body>
+    <div class="page-backdrop"></div>
+    <div class="grid-veil"></div>
+
+    <div class="nav-wrap">
+        <nav class="navbar">
+            <a href="index.html" class="brand">
+                <span class="brand-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.1"></circle><circle cx="5" cy="17.5" r="2.1"></circle><circle cx="19" cy="17.5" r="2.1"></circle><path d="M10.5 6.6 6.6 15.6M13.5 6.6l3.9 9M7.3 17.5h9.4"></path></svg></span>
+                <span class="brand-text-block"><span class="brand-name">SCOOP</span><span class="brand-sub">Innovations</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="industries.html" class="active">Industries</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Get a Demo</a>
+                <button type="button" class="hamburger-btn" onclick="toggleDrawer(true)" aria-label="Open menu">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <div class="drawer-backdrop" id="drawer-backdrop" onclick="toggleDrawer(false)"></div>
+    <aside class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-top">
+            <span class="brand-text-block"><span class="brand-name" style="color:#fff;">SCOOP</span><span class="brand-sub">Innovations</span></span>
+            <button type="button" class="drawer-close" onclick="toggleDrawer(false)" aria-label="Close menu">&times;</button>
+        </div>
+        <nav class="drawer-links">
+            <a href="index.html">Home</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="industries.html" class="active">Industries</a>
+            <a href="features.html">Features</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a href="contact.html" class="btn btn-primary" style="justify-content:center;">Get a Demo</a>
+    </aside>
+
+    <section class="page-hero">
+        <div class="container page-hero-top">
+            <div>
+                <span class="eyebrow">Who We Serve</span>
+                <h1>Industries We Serve</h1>
+                <p class="subtitle">Tailored solutions for diverse industries.</p>
+            </div>
+            <div class="hero-kicker-list">
+                <span>Industry Focused</span>
+                <span>Real World Impact</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-pad reveal" style="padding-top:10px;">
+        <div class="container">
+            <div class="industries-grid">
+                <a href="contact.html" class="industry-card">
+                    <div class="art" style="background:linear-gradient(150deg,#3a2a52 0%,#0e1c3c 60%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#cdb8ff" stroke-width="1.3"><path d="M8 4l4 2 4-2 3 3-2 2v11H5V9L3 7z"/></svg>
+                    </div>
+                    <div class="overlay"></div>
+                    <div class="label-row"><span class="name">Apparel &amp; Textiles</span><span class="arrow-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+                </a>
+                <a href="contact.html" class="industry-card">
+                    <div class="art" style="background:linear-gradient(150deg,#1f3350 0%,#0b1730 60%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#9cc0ff" stroke-width="1.3"><circle cx="9" cy="9" r="2.4"/><circle cx="15" cy="15" r="2.4"/><path d="M9 11.4V19M15 12.6V5M5 19h14"/></svg>
+                    </div>
+                    <div class="overlay"></div>
+                    <div class="label-row"><span class="name">Manufacturing</span><span class="arrow-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+                </a>
+                <a href="contact.html" class="industry-card">
+                    <div class="art" style="background:linear-gradient(150deg,#123a4a 0%,#0a1830 60%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#7bf1fb" stroke-width="1.3"><path d="M4 6h2l1.4 9.2A2 2 0 0 0 9.4 17h7.2a2 2 0 0 0 2-1.6L20 8H6.4"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg>
+                    </div>
+                    <div class="overlay"></div>
+                    <div class="label-row"><span class="name">Retail &amp; E-commerce</span><span class="arrow-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+                </a>
+                <a href="contact.html" class="industry-card">
+                    <div class="art" style="background:linear-gradient(150deg,#123b3a 0%,#0a1a2c 60%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#7bf7d6" stroke-width="1.3"><path d="M12 21s-7-4.4-9.2-9A5 5 0 0 1 12 6.8 5 5 0 0 1 21.2 12C19 16.6 12 21 12 21z"/><path d="M9 12h2v-2h2v2h2v2h-2v2h-2v-2H9z"/></svg>
+                    </div>
+                    <div class="overlay"></div>
+                    <div class="label-row"><span class="name">Healthcare</span><span class="arrow-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+                </a>
+                <a href="contact.html" class="industry-card">
+                    <div class="art" style="background:linear-gradient(150deg,#232a5c 0%,#0b1230 60%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#a9b6ff" stroke-width="1.3"><path d="M2 9l10-4.5L22 9l-10 4.5L2 9z"/><path d="M6 11v5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5"/></svg>
+                    </div>
+                    <div class="overlay"></div>
+                    <div class="label-row"><span class="name">Education</span><span class="arrow-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+                </a>
+                <a href="contact.html" class="industry-card">
+                    <div class="art" style="background:linear-gradient(150deg,#4a3a1f 0%,#101a30 60%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#f3d38f" stroke-width="1.3"><path d="M3 19v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7"/><path d="M3 19h18M6 10V7a2 2 0 0 1 2-2h3v5"/></svg>
+                    </div>
+                    <div class="overlay"></div>
+                    <div class="label-row"><span class="name">Hospitality</span><span class="arrow-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+                </a>
+                <a href="contact.html" class="industry-card">
+                    <div class="art" style="background:linear-gradient(150deg,#12324a 0%,#0a1830 60%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#7bd3fb" stroke-width="1.3"><rect x="2" y="8" width="12" height="8"/><path d="M14 11h4l3 3v2h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg>
+                    </div>
+                    <div class="overlay"></div>
+                    <div class="label-row"><span class="name">Logistics &amp; Transport</span><span class="arrow-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+                </a>
+                <a href="contact.html" class="industry-card">
+                    <div class="art" style="background:linear-gradient(150deg,#123a2f 0%,#0a1e2c 60%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#8df3c9" stroke-width="1.3"><rect x="4" y="10" width="16" height="8" rx="4"/><path d="M12 10v8"/></svg>
+                    </div>
+                    <div class="overlay"></div>
+                    <div class="label-row"><span class="name">Pharmacy</span><span class="arrow-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+                </a>
+                <a href="contact.html" class="industry-card">
+                    <div class="art" style="background:linear-gradient(150deg,#3a2f14 0%,#111a30 60%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#e6cf8f" stroke-width="1.3"><path d="M12 3v18M6 7l-3 5a3 3 0 0 0 6 0zM18 7l-3 5a3 3 0 0 0 6 0zM4 7h16M8 21h8"/></svg>
+                    </div>
+                    <div class="overlay"></div>
+                    <div class="label-row"><span class="name">Legal &amp; Professional</span><span class="arrow-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+                </a>
+                <a href="contact.html" class="industry-card">
+                    <div class="art" style="background:linear-gradient(150deg,#1c2a52 0%,#0a1230 60%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#9cc0ff" stroke-width="1.3"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><circle cx="12" cy="12" r="2"/></svg>
+                    </div>
+                    <div class="overlay"></div>
+                    <div class="label-row"><span class="name">Others</span><span class="arrow-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand">
+                        <span class="brand-mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.1"></circle><circle cx="5" cy="17.5" r="2.1"></circle><circle cx="19" cy="17.5" r="2.1"></circle><path d="M10.5 6.6 6.6 15.6M13.5 6.6l3.9 9M7.3 17.5h9.4"></path></svg></span>
+                        <span class="brand-text-block"><span class="brand-name" style="color:#fff;">SCOOP</span><span class="brand-sub">Innovations</span></span>
+                    </a>
+                    <p>Technology for a Smarter Tomorrow. AI-ready software that helps businesses plan, track, manage and grow.</p>
+                    <div class="social-row">
+                        <a href="#" class="social-btn" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="4"></rect><path d="M8 10.5v6M8 7.8v.01M12.5 16.5v-3.6c0-1.2.8-2 2-2s2 .8 2 2v3.6"></path></svg></a>
+                        <a href="#" class="social-btn" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="4"></rect><path d="M11 10l4 2-4 2z" fill="currentColor" stroke="none"></path></svg></a>
+                        <a href="#" class="social-btn" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="3.6"></circle><circle cx="17" cy="7" r="0.6" fill="currentColor" stroke="none"></circle></svg></a>
+                        <a href="#" class="social-btn" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 5l14 14M19 5 5 19"></path></svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Solutions</h5>
+                    <ul>
+                        <li><a href="solutions.html">ERP</a></li>
+                        <li><a href="solutions.html">CRM</a></li>
+                        <li><a href="solutions.html">HRMS</a></li>
+                        <li><a href="solutions.html">Dashboards</a></li>
+                        <li><a href="solutions.html">Cloud Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Get in Touch</h5>
+                    <ul>
+                        <li><a href="mailto:info@scoopinnovations.in">info@scoopinnovations.in</a></li>
+                        <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+                        <li><span>Tirupur, Tamil Nadu, India</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Scoop Innovations. All rights reserved.</span>
+                <span>Designed by Saran.</span>
+            </div>
+        </div>
+    </footer>
+
+    <nav class="mobile-bottom-nav">
+        <a href="index.html">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 4l8 7.5"></path><path d="M6 10v9h12v-9"></path></svg>
+            Home
+        </a>
+        <a href="industries.html" class="active">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.4"></rect><rect x="13" y="4" width="7" height="7" rx="1.4"></rect><rect x="4" y="13" width="7" height="7" rx="1.4"></rect><rect x="13" y="13" width="7" height="7" rx="1.4"></rect></svg>
+            Industries
+        </a>
+        <a href="contact.html">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="14" rx="2.4"></rect><path d="M4.5 6.5 12 12l7.5-5.5"></path></svg>
+            Contact
+        </a>
+    </nav>
+
+    <script src="site.js"></script>
+</body>
+</html>

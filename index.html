@@ -1,532 +1,243 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scoop Innovations | Transforming Ideas Into Digital Solutions</title>
-    <!-- Google Fonts -->
+    <title>Scoop Innovations | Technology for a Smarter Tomorrow</title>
+    <meta name="description" content="Scoop Innovations builds AI-ready ERP, CRM, HRMS and custom software that helps businesses plan, track, manage and grow.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="page-backdrop"></div>
+    <div class="grid-veil"></div>
 
-    <!-- Navigation Header (Header contains ONLY logo - No company text) -->
-    <header class="site-header">
-        <div class="container nav-content">
-            <a href="https://scoopinnovations.in/" class="brand-logo-only" title="Scoop Innovations">
-                <img src="assets/logo.png" alt="Scoop Innovations Logo" class="brand-logo-img">
+    <div class="nav-wrap">
+        <nav class="navbar">
+            <a href="index.html" class="brand">
+                <span class="brand-mark">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="5" r="2.1"></circle>
+                        <circle cx="5" cy="17.5" r="2.1"></circle>
+                        <circle cx="19" cy="17.5" r="2.1"></circle>
+                        <path d="M10.5 6.6 6.6 15.6M13.5 6.6l3.9 9M7.3 17.5h9.4"></path>
+                    </svg>
+                </span>
+                <span class="brand-text-block">
+                    <span class="brand-name">SCOOP</span>
+                    <span class="brand-sub">Innovations</span>
+                </span>
             </a>
             <ul class="nav-links">
-                <li><a href="#hero-section" class="nav-link">Home</a></li>
-                <li><a href="#solutions" class="nav-link">Solutions</a></li>
-                <li><a href="#capabilities" class="nav-link">Advanced Tech</a></li>
-                <li><a href="#configurator" class="nav-link">Configurator</a></li>
-                <li><a href="mailto:info@scoopinnovations.in" class="nav-link">Contact</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="industries.html">Industries</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <!-- Dual Theme Switcher Button -->
-                <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" onclick="toggleTheme()" title="Switch between Radiant Light and Cyber Dark Theme">
-                    <span id="theme-icon">☀️</span>
-                    <span id="theme-label">Radiant Theme</span>
+                <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Get a Demo</a>
+                <button type="button" class="hamburger-btn" onclick="toggleDrawer(true)" aria-label="Open menu">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
                 </button>
-                <button type="button" class="btn-chatbot-nav" onclick="toggleChatbot(true)">
-                    <span>💬 AI Copilot</span>
-                </button>
-                <button type="button" class="btn-ghost" onclick="openDemoModal()">Schedule Demo</button>
-
-                <button type="button" class="mobile-menu-btn" onclick="toggleMobileDrawer()" aria-label="Toggle Mobile Menu">☰</button>
             </div>
-        </div>
-    </header>
-
-    <!-- Mobile Navigation Drawer -->
-    <div class="mobile-drawer" id="mobile-drawer">
-        <ul class="mobile-nav-links">
-            <li><a href="#hero-section" onclick="toggleMobileDrawer(false)">Home</a></li>
-            <li><a href="#solutions" onclick="toggleMobileDrawer(false)">Solutions</a></li>
-            <li><a href="#capabilities" onclick="toggleMobileDrawer(false)">Advanced Tech</a></li>
-            <li><a href="#configurator" onclick="toggleMobileDrawer(false)">Configurator</a></li>
-            <li><a href="mailto:info@scoopinnovations.in" onclick="toggleMobileDrawer(false)">Contact</a></li>
-        </ul>
-        <hr style="border: none; border-top: 1px solid var(--border-color); margin: 8px 0;">
-        <button type="button" class="theme-toggle-btn" onclick="toggleTheme(); toggleMobileDrawer(false);" style="width: 100%; justify-content: center;">
-            <span>☀️/🌙 Toggle Theme</span>
-        </button>
-        <button type="button" class="btn-primary" onclick="openDemoModal(); toggleMobileDrawer(false);" style="width: 100%; justify-content: center;">
-            <span>Schedule Demo</span>
-        </button>
-
+        </nav>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero-section" id="hero-section">
-        <div class="container hero-grid">
-            <div class="hero-content">
-                <!-- Scoop Innovations Hero Title & Clean Aligned Tagline -->
-                <div class="hero-brand-block">
-                    <h1 class="hero-company-name">
-                        SCOOP <span class="gradient-text">INNOVATIONS</span>
-                    </h1>
-                    <p class="hero-tagline-small">
-                        Transforming Ideas Into Digital Solutions
-                    </p>
-                </div>
-
-                <h2 class="hero-subheading">
-                    Complete Management <span class="gradient-accent-text">Software Suite</span> for Global Industries
-                </h2>
-
-                <p class="hero-description">
-                    Empowering Hospitals, Campuses, Hotels, Retail, Manufacturing, Logistics, and Legal firms with an AI-ready, modular management ecosystem. Deployable on Sovereign Cloud or Air-Gapped On-Premises.
-                </p>
-
-                <div class="hero-cta-group">
-                    <a href="#solutions" class="btn-primary">
-                        <span>Explore Solutions</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
-                    <button type="button" class="btn-secondary" onclick="toggleChatbot(true)">
-                        <span>Ask Scoop AI</span>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                    </button>
-                </div>
-
-                <div class="hero-stats-row">
-                    <div class="stat-item">
-                        <h3 class="counter-val" data-target="10">10+</h3>
-                        <p>Industry Verticals</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3 class="counter-val" data-target="100">100%</h3>
-                        <p>Modular Architecture</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>Hybrid</h3>
-                        <p>Cloud / On-Premise</p>
-                    </div>
-                </div>
-            </div>
+    <div class="drawer-backdrop" id="drawer-backdrop" onclick="toggleDrawer(false)"></div>
+    <aside class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-top">
+            <span class="brand-text-block">
+                <span class="brand-name" style="color:#fff;">SCOOP</span>
+                <span class="brand-sub">Innovations</span>
+            </span>
+            <button type="button" class="drawer-close" onclick="toggleDrawer(false)" aria-label="Close menu">&times;</button>
         </div>
-    </section>
+        <nav class="drawer-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="industries.html">Industries</a>
+            <a href="features.html">Features</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a href="contact.html" class="btn btn-primary" style="justify-content:center;">Get a Demo</a>
+    </aside>
 
-    <!-- 10 Solutions Section -->
-    <section class="solutions-section" id="solutions">
+    <!-- HERO -->
+    <section class="home-hero">
         <div class="container">
-            <div class="section-header reveal-on-scroll">
-                <span class="section-tag">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-                    Industry Verticals
-                </span>
-                <h2 class="section-title">Complete Management Software Solutions</h2>
-                <p class="section-subtitle">Turnkey enterprise software suites tailored for specific operational workflows, regulatory compliance, and cross-departmental synchrony.</p>
+            <div class="page-hero-top" style="align-items:flex-start; margin-bottom: 10px;">
+                <span class="eyebrow">AI-Powered Business Solutions</span>
+                <div class="hero-kicker-list">
+                    <span>Intelligent</span>
+                    <span>Reliable</span>
+                    <span>Scalable</span>
+                    <span>AI-Powered</span>
+                </div>
             </div>
 
-            <!-- Filter Bar -->
-            <div class="solutions-filter-bar reveal-on-scroll">
-                <button type="button" class="filter-btn active" data-filter="all">All Solutions</button>
-                <button type="button" class="filter-btn" data-filter="Healthcare">Healthcare & Labs</button>
-                <button type="button" class="filter-btn" data-filter="Education">Education</button>
-                <button type="button" class="filter-btn" data-filter="Hospitality">Hospitality</button>
-                <button type="button" class="filter-btn" data-filter="Commerce">Retail & POS</button>
-                <button type="button" class="filter-btn" data-filter="Manufacturing">Manufacturing & Textile</button>
-                <button type="button" class="filter-btn" data-filter="Supply Chain">Logistics & Fleet</button>
-                <button type="button" class="filter-btn" data-filter="Legal">Legal Practice</button>
+            <div class="home-hero-grid">
+                <div class="reveal is-visible">
+                    <h1>Transform Your Business with <span class="text-cyan">Technology</span></h1>
+                    <p class="tag-line">Plan. Track. Manage. Grow.</p>
+                    <p class="desc">Smart software solutions for a more efficient, connected and future-ready business.</p>
+                    <div class="hero-cta-row">
+                        <a href="contact.html" class="btn btn-primary">
+                            <span>Get a Demo</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="solutions.html" class="btn btn-secondary-dark">Explore Solutions</a>
+                    </div>
+                </div>
+
+                <div class="globe-stage" aria-hidden="true">
+                    <div class="globe-glow"></div>
+                    <div class="globe-core"></div>
+                    <svg class="globe-svg" viewBox="0 0 400 400">
+                        <defs>
+                            <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#7bf1fb"></stop>
+                                <stop offset="100%" stop-color="#2f6bff"></stop>
+                            </linearGradient>
+                        </defs>
+                        <g class="globe-ring-outer">
+                            <ellipse class="lat strong" cx="200" cy="200" rx="150" ry="150"></ellipse>
+                            <ellipse class="lat" cx="200" cy="200" rx="150" ry="60"></ellipse>
+                            <ellipse class="lat" cx="200" cy="200" rx="150" ry="105"></ellipse>
+                            <path class="arc" d="M50 220 Q200 60 350 190"></path>
+                            <circle class="node" cx="50" cy="220" r="4"></circle>
+                            <circle class="node" cx="350" cy="190" r="4"></circle>
+                        </g>
+                        <g class="globe-ring-inner">
+                            <ellipse class="lat" cx="200" cy="200" rx="105" ry="150"></ellipse>
+                            <ellipse class="lat" cx="200" cy="200" rx="60" ry="150"></ellipse>
+                            <path class="arc" d="M120 340 Q260 240 300 90"></path>
+                            <circle class="node" cx="120" cy="340" r="4"></circle>
+                            <circle class="node" cx="300" cy="90" r="4"></circle>
+                        </g>
+                    </svg>
+                    <div class="data-chip chip-1"><span class="dot"></span>Live Sync Active</div>
+                    <div class="data-chip chip-2"><span class="dot"></span>99.9% Uptime</div>
+                </div>
             </div>
 
-            <!-- Grid -->
-            <div class="solutions-grid" id="solutions-grid">
-                <!-- Dynamically rendered by app.js with 3D tilt & animations -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Advanced Capabilities Section -->
-    <section class="features-section" id="capabilities">
-        <div class="container">
-            <div class="section-header reveal-on-scroll">
-                <span class="section-tag">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                    Advanced Modules
-                </span>
-                <h2 class="section-title">Built-in Enterprise Superpowers</h2>
-                <p class="section-subtitle">Equip any management solution with modular add-ons designed for next-level speed, connectivity, and automation.</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-box reveal-on-scroll">
-                    <div class="feature-icon-circle">🤖</div>
-                    <h4>AI Chatbot & AI Copilot</h4>
-                    <p>Context-aware virtual assistants for instant customer inquiries, document summarization, and automated data entry.</p>
+            <div class="feature-strip">
+                <div class="strip-item">
+                    <span class="strip-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="6" rx="1.5"></rect><rect x="4" y="14" width="16" height="6" rx="1.5"></rect><circle cx="7.5" cy="7" r="0.6" fill="currentColor" stroke="none"></circle><circle cx="7.5" cy="17" r="0.6" fill="currentColor" stroke="none"></circle></svg></span>
+                    <span class="label">ERP</span>
                 </div>
-
-                <div class="feature-box reveal-on-scroll">
-                    <div class="feature-icon-circle">💬</div>
-                    <h4>WhatsApp Business Integration</h4>
-                    <p>Automate appointment reminders, bills, dispatch notes, lab test reports, and fee alerts directly via WhatsApp.</p>
+                <div class="strip-item">
+                    <span class="strip-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"></circle><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"></path><circle cx="17.5" cy="8.5" r="2.4"></circle><path d="M15 12c2.5 0 5 1.6 5.5 4.2"></path></svg></span>
+                    <span class="label">CRM</span>
                 </div>
-
-                <div class="feature-box reveal-on-scroll">
-                    <div class="feature-icon-circle">💳</div>
-                    <h4>Payment Gateway & POS</h4>
-                    <p>Unified checkout with instant UPI, Credit/Debit cards, Net Banking, EMI, split bills, and automatic reconciliation.</p>
+                <div class="strip-item">
+                    <span class="strip-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3.5" width="16" height="17" rx="2.5"></rect><circle cx="12" cy="10" r="2.6"></circle><path d="M8 17c0.7-2.2 2.4-3 4-3s3.3 0.8 4 3"></path></svg></span>
+                    <span class="label">HRMS</span>
                 </div>
-
-                <div class="feature-box reveal-on-scroll">
-                    <div class="feature-icon-circle">🏷️</div>
-                    <h4>Barcode / QR Code Engine</h4>
-                    <p>High-speed generation and scanning for patient wristbands, inventory pallets, garment bundles, and retail tags.</p>
+                <div class="strip-item">
+                    <span class="strip-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16"></path><path d="M7 19v-5M12 19V8M17 19v-9"></path><path d="M14 6l3-2 3 3"></path></svg></span>
+                    <span class="label">Analytics</span>
                 </div>
-
-                <div class="feature-box reveal-on-scroll">
-                    <div class="feature-icon-circle">👤</div>
-                    <h4>Biometric & Attendance</h4>
-                    <p>Seamless hardware sync with fingerprint, facial recognition, and RFID cards for staff, students, and workers.</p>
+                <div class="strip-item">
+                    <span class="strip-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 8 5 12l4 4"></path><path d="M15 8l4 4-4 4"></path><path d="M13.5 6.5 10.5 17.5"></path></svg></span>
+                    <span class="label">Custom Software</span>
                 </div>
-
-                <div class="feature-box reveal-on-scroll">
-                    <div class="feature-icon-circle">🛰️</div>
-                    <h4>GPS & Fleet Tracking</h4>
-                    <p>Live vehicle telematics, route deviation alerts, fuel consumption monitoring, and proof-of-delivery logging.</p>
-                </div>
-
-                <div class="feature-box reveal-on-scroll">
-                    <div class="feature-icon-circle">⚡</div>
-                    <h4>API & 3rd-Party Integrations</h4>
-                    <p>Developer-friendly REST & GraphQL APIs to bridge with accounting, CRMs, lab analyzers, and e-commerce platforms.</p>
-                </div>
-
-                <div class="feature-box reveal-on-scroll">
-                    <div class="feature-icon-circle">🔔</div>
-                    <h4>Omnichannel Notifications</h4>
-                    <p>Integrated notification orchestration across SMS, transactional emails, push notifications, and webhooks.</p>
-                </div>
-
-                <div class="feature-box reveal-on-scroll">
-                    <div class="feature-icon-circle">🧾</div>
-                    <h4>E-Invoicing & Tax Compliance</h4>
-                    <p>Automated GST / VAT calculation, government portal IRN generation, and E-Way Bill dispatch creation.</p>
-                </div>
-
-                <div class="feature-box reveal-on-scroll">
-                    <div class="feature-icon-circle">🏢</div>
-                    <h4>Multi-Company & Multi-Branch</h4>
-                    <p>Manage holding companies, decentralized branch offices, and warehouse hubs under a single master ledger.</p>
-                </div>
-
-                <div class="feature-box reveal-on-scroll">
-                    <div class="feature-icon-circle">🌐</div>
-                    <h4>Multi-Language & Currency</h4>
-                    <p>Globalize your operation with localization, localized calendars, real-time exchange rates, and multi-currency ledgers.</p>
-                </div>
-
-                <div class="feature-box reveal-on-scroll">
-                    <div class="feature-icon-circle">☁️</div>
-                    <h4>Cloud or On-Premise</h4>
-                    <p>Deploy securely on managed SOC2-compliant cloud, dedicated VPCs, or offline air-gapped private servers.</p>
+                <div class="strip-item">
+                    <span class="strip-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="13" height="10" rx="1.5"></rect><path d="M6.5 18h6"></path><rect x="17.5" y="7.5" width="4.5" height="8.5" rx="1.2"></rect></svg></span>
+                    <span class="label">Web &amp; Mobile</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Interactive Solution Configurator -->
-    <section class="configurator-section" id="configurator">
-        <div class="container">
-            <div class="section-header reveal-on-scroll">
-                <span class="section-tag">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
-                    Solution Builder
-                </span>
-                <h2 class="section-title">Configure Your Enterprise Stack</h2>
-                <p class="section-subtitle">Select your primary vertical, choose required advanced modules, and estimate implementation timeline.</p>
+    <!-- CTA BANNER -->
+    <section class="section-pad reveal" style="padding-top:20px;">
+        <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; background:linear-gradient(135deg, rgba(47,107,255,0.16), rgba(47,224,240,0.08)); border:1px solid var(--border-dark); border-radius:var(--radius-xl); padding:40px 44px;">
+            <div>
+                <h2 style="font-size:1.6rem; font-weight:800; margin-bottom:6px;">Ready to see Scoop in action?</h2>
+                <p style="color:var(--on-dark-300); font-size:0.98rem;">Book a walkthrough tailored to your industry and team size.</p>
             </div>
-
-            <div class="configurator-card reveal-on-scroll">
-                <!-- Step 1 -->
-                <div class="config-step-title">
-                    <span class="config-badge-number">1</span>
-                    <span>Select Core Industry Solution</span>
-                </div>
-                <div class="industry-options-grid">
-                    <div class="industry-radio-card selected" data-industry="Hospital Management">
-                        <span>🏥</span><span>Hospital Management</span>
-                    </div>
-                    <div class="industry-radio-card" data-industry="School & College Management">
-                        <span>🎓</span><span>School & College</span>
-                    </div>
-                    <div class="industry-radio-card" data-industry="Hotel & Restaurant Management">
-                        <span>🏨</span><span>Hotel & Restaurant</span>
-                    </div>
-                    <div class="industry-radio-card" data-industry="Retail Management">
-                        <span>🛍️</span><span>Retail Management</span>
-                    </div>
-                    <div class="industry-radio-card" data-industry="Manufacturing ERP">
-                        <span>⚙️</span><span>Manufacturing ERP</span>
-                    </div>
-                    <div class="industry-radio-card" data-industry="Textile & Garments">
-                        <span>🧵</span><span>Textile & Garments</span>
-                    </div>
-                    <div class="industry-radio-card" data-industry="Logistics & Transport">
-                        <span>🚚</span><span>Logistics & Fleet</span>
-                    </div>
-                    <div class="industry-radio-card" data-industry="Pharmacy Management">
-                        <span>💊</span><span>Pharmacy Suite</span>
-                    </div>
-                    <div class="industry-radio-card" data-industry="Laboratory (LIMS)">
-                        <span>🔬</span><span>Laboratory LIMS</span>
-                    </div>
-                    <div class="industry-radio-card" data-industry="Legal Practice">
-                        <span>⚖️</span><span>Legal Practice</span>
-                    </div>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="config-step-title">
-                    <span class="config-badge-number">2</span>
-                    <span>Toggle Advanced Superpowers & Integrations</span>
-                </div>
-                <div class="addons-checkbox-grid">
-                    <div class="addon-box active" data-addon="AI Copilot">
-                        <span>🤖 AI Copilot & Chatbot</span>
-                        <span>✔</span>
-                    </div>
-                    <div class="addon-box active" data-addon="WhatsApp Business">
-                        <span>💬 WhatsApp Integration</span>
-                        <span>✔</span>
-                    </div>
-                    <div class="addon-box" data-addon="Payment Gateway">
-                        <span>💳 Payment Gateway & POS</span>
-                        <span>+</span>
-                    </div>
-                    <div class="addon-box" data-addon="Barcode & QR Code">
-                        <span>🏷️ Barcode / QR Engine</span>
-                        <span>+</span>
-                    </div>
-                    <div class="addon-box" data-addon="Biometric Attendance">
-                        <span>👤 Biometric Integration</span>
-                        <span>+</span>
-                    </div>
-                    <div class="addon-box" data-addon="GPS Tracking">
-                        <span>🛰️ GPS Fleet Tracking</span>
-                        <span>+</span>
-                    </div>
-                    <div class="addon-box" data-addon="E-Invoicing">
-                        <span>🧾 E-Invoicing & Tax Sync</span>
-                        <span>+</span>
-                    </div>
-                    <div class="addon-box active" data-addon="Cloud Deployment">
-                        <span>☁️ Cloud or On-Premise</span>
-                        <span>✔</span>
-                    </div>
-                </div>
-
-                <!-- Summary Bar -->
-                <div class="config-summary-bar">
-                    <div class="summary-details">
-                        <h4 id="summary-industry">Hospital Management</h4>
-                        <p><span id="summary-addons-count">3 Advanced Add-ons</span> • <span id="summary-time">Est. Deployment: 3 Weeks</span></p>
-                    </div>
-                    <button type="button" class="btn-primary" onclick="openDemoModal()">
-                        <span>Request Custom Architecture Proposal</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </button>
-                </div>
-            </div>
+            <a href="contact.html" class="btn btn-primary">
+                <span>Get a Demo</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-top">
+            <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="https://scoopinnovations.in/" class="brand-logo-only" title="Scoop Innovations">
-                        <img src="assets/logo.png" alt="Scoop Innovations" class="brand-logo-img">
+                    <a href="index.html" class="brand">
+                        <span class="brand-mark">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.1"></circle><circle cx="5" cy="17.5" r="2.1"></circle><circle cx="19" cy="17.5" r="2.1"></circle><path d="M10.5 6.6 6.6 15.6M13.5 6.6l3.9 9M7.3 17.5h9.4"></path></svg>
+                        </span>
+                        <span class="brand-text-block"><span class="brand-name" style="color:#fff;">SCOOP</span><span class="brand-sub">Innovations</span></span>
                     </a>
-                    
-                    <div class="footer-contact-box">
-                        <a href="mailto:info@scoopinnovations.in" class="footer-contact-item">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                            <span>info@scoopinnovations.in</span>
-                        </a>
-                        <a href="https://scoopinnovations.in/" target="_blank" rel="noopener" class="footer-contact-item">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                            <span>https://scoopinnovations.in/</span>
-                        </a>
+                    <p>Technology for a Smarter Tomorrow. AI-ready software that helps businesses plan, track, manage and grow.</p>
+                    <div class="social-row">
+                        <a href="#" class="social-btn" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="4"></rect><path d="M8 10.5v6M8 7.8v.01M12.5 16.5v-3.6c0-1.2.8-2 2-2s2 .8 2 2v3.6"></path></svg></a>
+                        <a href="#" class="social-btn" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="4"></rect><path d="M11 10l4 2-4 2z" fill="currentColor" stroke="none"></path></svg></a>
+                        <a href="#" class="social-btn" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="3.6"></circle><circle cx="17" cy="7" r="0.6" fill="currentColor" stroke="none"></circle></svg></a>
+                        <a href="#" class="social-btn" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 5l14 14M19 5 5 19"></path></svg></a>
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h5>Healthcare & Science</h5>
-                    <ul class="footer-links">
-                        <li><a href="#solutions" onclick="openSolutionDetails('hospital')">Hospital Management</a></li>
-                        <li><a href="#solutions" onclick="openSolutionDetails('pharmacy')">Pharmacy Management</a></li>
-                        <li><a href="#solutions" onclick="openSolutionDetails('lims')">Laboratory (LIMS)</a></li>
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h5>Commerce & Supply</h5>
-                    <ul class="footer-links">
-                        <li><a href="#solutions" onclick="openSolutionDetails('retail')">Retail Management & POS</a></li>
-                        <li><a href="#solutions" onclick="openSolutionDetails('logistics')">Logistics & Fleet</a></li>
-                        <li><a href="#solutions" onclick="openSolutionDetails('manufacturing')">Manufacturing ERP</a></li>
-                        <li><a href="#solutions" onclick="openSolutionDetails('textile')">Textile & Garment</a></li>
+                    <h5>Solutions</h5>
+                    <ul>
+                        <li><a href="solutions.html">ERP</a></li>
+                        <li><a href="solutions.html">CRM</a></li>
+                        <li><a href="solutions.html">HRMS</a></li>
+                        <li><a href="solutions.html">Dashboards</a></li>
+                        <li><a href="solutions.html">Cloud Solutions</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h5>Institutional & Legal</h5>
-                    <ul class="footer-links">
-                        <li><a href="#solutions" onclick="openSolutionDetails('school')">School & College Campus</a></li>
-                        <li><a href="#solutions" onclick="openSolutionDetails('hotel')">Hotel & Restaurant POS</a></li>
-                        <li><a href="#solutions" onclick="openSolutionDetails('legal')">Legal Practice Software</a></li>
+                    <h5>Get in Touch</h5>
+                    <ul>
+                        <li><a href="mailto:info@scoopinnovations.in">info@scoopinnovations.in</a></li>
+                        <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+                        <li><span>Tirupur, Tamil Nadu, India</span></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Scoop Innovations. All rights reserved</p>
-                <p>Designed By Saran.</p>
+                <span>&copy; 2026 Scoop Innovations. All rights reserved.</span>
+                <span>Designed by Saran.</span>
             </div>
         </div>
     </footer>
 
-    <!-- Details Modal -->
-    <div class="modal-overlay" id="details-modal">
-        <div class="modal-window">
-            <button type="button" class="modal-close-btn">&times;</button>
-            <div class="modal-header">
-                <div class="modal-icon-box" id="modal-sol-icon">🏥</div>
-                <div>
-                    <span class="category-tag" id="modal-sol-badge">Healthcare</span>
-                    <h3 id="modal-sol-title" style="font-size: 1.5rem; margin-top: 4px; color: var(--text-primary);">Hospital Management</h3>
-                </div>
-            </div>
-            <div class="modal-body">
-                <p id="modal-sol-desc" style="color: var(--text-secondary); font-size: 0.95rem;"></p>
-                <div>
-                    <h5 style="color: var(--text-primary); font-size: 1rem; margin-bottom: 8px;">Included Core Modules:</h5>
-                    <div class="module-list-grid" id="modal-sol-modules">
-                        <!-- Filled by JS -->
-                    </div>
-                </div>
-                <div style="margin-top: 10px; padding-top: 16px; border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end; gap: 12px;">
-                    <button type="button" class="btn-ghost modal-close-btn" style="position: static; border-radius: var(--radius-full); width: auto; height: auto;">Close</button>
-                    <button type="button" class="btn-primary" onclick="openDemoModal()">Schedule Live Walkthrough</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <nav class="mobile-bottom-nav">
+        <a href="index.html" class="active">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 4l8 7.5"></path><path d="M6 10v9h12v-9"></path></svg>
+            Home
+        </a>
+        <a href="solutions.html">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.4"></rect><rect x="13" y="4" width="7" height="7" rx="1.4"></rect><rect x="4" y="13" width="7" height="7" rx="1.4"></rect><rect x="13" y="13" width="7" height="7" rx="1.4"></rect></svg>
+            Solutions
+        </a>
+        <a href="contact.html">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="14" rx="2.4"></rect><path d="M4.5 6.5 12 12l7.5-5.5"></path></svg>
+            Contact
+        </a>
+    </nav>
 
-    <!-- Demo Request Modal -->
-    <div class="modal-overlay" id="demo-modal">
-        <div class="modal-window">
-            <button type="button" class="modal-close-btn">&times;</button>
-            <div class="modal-header">
-                <div class="modal-icon-box">🚀</div>
-                <div>
-                    <span class="category-tag" style="color: var(--scoop-cyan);">Architecture Consult</span>
-                    <h3 style="font-size: 1.5rem; margin-top: 4px; color: var(--text-primary);">Schedule Solution Demo</h3>
-                </div>
-            </div>
-            <div class="modal-body">
-                <p style="color: var(--text-secondary); font-size: 0.92rem;">
-                    Speak with our principal solution architects at <strong>Scoop Innovations</strong> to explore customized modules, cloud or on-premise deployment, and integrations.
-                </p>
-                <form class="demo-form" id="demo-request-form">
-                    <div class="form-group">
-                        <label>Your Full Name *</label>
-                        <input type="text" id="demo-name" class="form-input" required placeholder="John Doe">
-                    </div>
-                    <div class="form-group">
-                        <label>Business Email *</label>
-                        <input type="email" id="demo-email" class="form-input" required placeholder="john@company.com">
-                    </div>
-                    <div class="form-group">
-                        <label>Contact Number / WhatsApp *</label>
-                        <input type="text" id="demo-phone" class="form-input" required placeholder="+91 98765 43210">
-                    </div>
-                    <div class="form-group">
-                        <label>Primary Solution Vertical *</label>
-                        <select class="form-select" id="demo-vertical" required>
-                            <option value="Hospital Management">Hospital Management</option>
-                            <option value="School & College Management">School & College Management</option>
-                            <option value="Hotel & Restaurant Management">Hotel & Restaurant Management</option>
-                            <option value="Retail Management">Retail Management</option>
-                            <option value="Manufacturing ERP">Manufacturing ERP</option>
-                            <option value="Textile & Garment Management">Textile & Garment Management</option>
-                            <option value="Logistics & Transport">Logistics & Transport</option>
-                            <option value="Pharmacy Management">Pharmacy Management</option>
-                            <option value="Laboratory (LIMS)">Laboratory (LIMS)</option>
-                            <option value="Legal Practice">Legal Practice</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Preferred Deployment Mode</label>
-                        <select class="form-select" id="demo-deployment">
-                            <option value="Cloud Managed">Managed High-Availability Cloud</option>
-                            <option value="On-Premise">Private On-Premise / Air-gapped Appliance</option>
-                            <option value="Hybrid">Hybrid Multi-Cloud</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Specific Requirements & Add-ons</label>
-                        <textarea class="form-textarea" id="demo-notes" rows="3" placeholder="E.g., AI Copilot, WhatsApp alerts, biometric integration..."></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary" style="margin-top: 10px; justify-content: center;">
-                        <span>Submit to info@scoopinnovations.in</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- AI Chatbot Floating Trigger -->
-    <button type="button" class="chatbot-toggle-btn" id="chatbot-toggle-btn" onclick="toggleChatbot()" title="Chat with Scoop AI Copilot">
-        <span class="chatbot-badge-pulse"></span>
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-    </button>
-
-    <!-- AI Chatbot Floating Window -->
-    <div class="chatbot-window" id="chatbot-window">
-        <div class="chatbot-header">
-            <div class="chatbot-header-left">
-                <div class="chatbot-avatar">🤖</div>
-                <div class="chatbot-title">
-                    <h4>Scoop AI Copilot</h4>
-                    <span class="chatbot-status">Online • Instant Assistance</span>
-                </div>
-            </div>
-            <button type="button" class="chatbot-close-btn" onclick="toggleChatbot(false)" title="Close Chat">&times;</button>
-        </div>
-
-        <div class="chatbot-messages" id="chatbot-messages">
-            <!-- Initial Greeting -->
-            <div class="chat-bubble bot">
-                👋 Hello! Welcome to <strong>Scoop Innovations</strong>.
-                <br><em>Transforming Ideas Into Digital Solutions.</em>
-                <br><br>
-                How can I help you today? Ask me about any of our <strong>Management Software Solutions</strong>, AI Copilot, integrations, or request a custom proposal!
-                <div class="chat-quick-chips">
-                    <button type="button" class="quick-chip-btn" onclick="askQuickChip('Hospital Management')">🏥 Hospital HMS</button>
-                    <button type="button" class="quick-chip-btn" onclick="askQuickChip('School & College')">🎓 School ERP</button>
-                    <button type="button" class="quick-chip-btn" onclick="askQuickChip('Manufacturing ERP')">⚙️ Manufacturing</button>
-                    <button type="button" class="quick-chip-btn" onclick="askQuickChip('Logistics & Fleet')">🚚 Logistics</button>
-                    <button type="button" class="quick-chip-btn" onclick="askQuickChip('Retail POS')">🛍️ Retail POS</button>
-                    <button type="button" class="quick-chip-btn" onclick="askQuickChip('Connect to Sales')">📬 Connect to Sales</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Chat Input Bar -->
-        <form class="chatbot-input-bar" id="chatbot-form">
-            <input type="text" id="chatbot-input" placeholder="Ask about solutions, features, demo..." autocomplete="off">
-            <button type="submit" class="chatbot-send-btn" title="Send Message">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-            </button>
-        </form>
-    </div>
-
-    <!-- Scripts -->
-    <script src="app.js"></script>
+    <script src="site.js"></script>
 </body>
 </html>
